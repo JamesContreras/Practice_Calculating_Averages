@@ -13,29 +13,29 @@ namespace HW_EX_3A_Calculating_Averages
          
             Console.WriteLine( " Input ten school grade Values ranging from 0...100 : " ) ;
 
-            int grade1 =int.Parse(Console.ReadLine() ) ;
+            double grade1 =int.Parse(Console.ReadLine());
 
-            int grade2= int.Parse(Console.ReadLine() ) ;
-                
-            int grade3= int.Parse(Console.ReadLine() ) ;
-                
-            int grade4= int.Parse(Console.ReadLine() ) ;
-                
-            int grade5= int.Parse(Console.ReadLine() ) ;
-                
-            int grade6= int.Parse(Console.ReadLine() ) ;
-               
-            int grade7= int.Parse(Console.ReadLine() ) ;
-                
-            int grade8= int.Parse(Console.ReadLine() ) ;
-               
-            int grade9= int.Parse(Console.ReadLine() ) ;
-                
-            int grade10 = int.Parse(Console.ReadLine() ) ;
+            double grade2= int.Parse(Console.ReadLine());
+
+            double grade3 = int.Parse(Console.ReadLine());
+
+            double grade4 = int.Parse(Console.ReadLine());
+
+            double grade5 = int.Parse(Console.ReadLine());
+
+            double grade6 = int.Parse(Console.ReadLine());
+
+            double grade7 = int.Parse(Console.ReadLine());
+
+            double grade8 = int.Parse(Console.ReadLine());
+
+            double grade9 = int.Parse(Console.ReadLine());
+
+            double grade10 = int.Parse(Console.ReadLine());
 
             // implement adding the sums
 
-            Console.WriteLine("The RunningSum of the ten values is : {0} ", AddValues(grade1, grade2, grade3, grade4, grade5, grade6, grade7, grade8, grade9, grade10));         
+            Console.WriteLine("The Sum of the ten values is : {0} ", AddValues(grade1, grade2, grade3, grade4, grade5, grade6, grade7, grade8, grade9, grade10));         
             
 
 
@@ -43,21 +43,48 @@ namespace HW_EX_3A_Calculating_Averages
 
 
             Console.WriteLine("The average of the ten test scores is: {0} ", DivideValues(grade1, grade2, grade3, grade4, grade5, grade6, grade7, grade8, grade9, grade10));
+       
 
             
+            // Implement a non-specific number of test scores and average them for the final grade
 
 
 
-            //implement dividing specific number of values for the final grade with grade letter
+            double sumA = 0;
+
+            double countB = 0;
+
+            string input = "";          
 
 
-            Console.WriteLine( "Input an arbitrary number of test scores to find the final grade average: ");
+            do
+            {
 
-            double sum = 0;
+                Console.WriteLine("Next Integer or type STOP: ");
 
-            double count = 10;
+                input = Console.ReadLine();
 
-            for (int i = 0; i <= 10; i++)
+                if (input != "-1");
+                {
+                    sumA += int.Parse(input);
+
+                    countB += 1;
+                }
+            }
+              while (input != "-1");
+
+                Console.WriteLine($"The Average is : {sumA / countB}");
+
+
+
+            Console.WriteLine("Input an arbitrary number of test scores to find the final grade average: ");
+
+            int sum = 0;
+
+            int count = 0;
+
+            
+            for (double i = 0; i <= 10; i++)
             {
 
                 Console.WriteLine("Enter the next integer: ");
@@ -65,43 +92,13 @@ namespace HW_EX_3A_Calculating_Averages
                 sum += int.Parse(Console.ReadLine());
             }
 
-            if (sum <= 60)
-            {
-                Console.WriteLine(" Grade : F ");
-            }
-
-            else if (sum <= 70)
-            {
-                Console.WriteLine(" Grade : D ");
-            }
-
-            else if (sum <= 80)
-            {
-                Console.WriteLine(" Grade : C ");
-            }
-
-            else if (sum <= 90)
-            {
-                Console.WriteLine(" Grade : B ");
-            }
-
-            else if (sum <= 100)
-            {
-                Console.WriteLine(" Grade : A ");
-            }
-
-            Console.WriteLine($" The Average is : {sum / count} ");
-
-
-           
-
-
+            Console.WriteLine($"The Average is : {sum / count}");
 
 
 
         }
 
-        static double AddValues(int grade1, int grade2, int grade3, int grade4, int grade5, int grade6, int grade7, int grade8, int grade9, int grade10)
+        static double AddValues(double grade1, double grade2, double grade3, double grade4, double grade5, double grade6, double grade7, double grade8, double grade9, double grade10)
         {
             double addValues;
 
@@ -110,7 +107,7 @@ namespace HW_EX_3A_Calculating_Averages
             return addValues;
         }
 
-        static double DivideValues(int grade1, int grade2, int grade3, int grade4, int grade5, int grade6, int grade7, int grade8, int grade9, int grade10)
+        static double DivideValues(double grade1, double grade2, double grade3, double grade4, double grade5, double grade6, double grade7, double grade8, double grade9, double grade10)
         {
             double divideValues;
 
@@ -146,6 +143,8 @@ namespace HW_EX_3A_Calculating_Averages
             return divideValues;
 
         }
+
+
 
 
     }
